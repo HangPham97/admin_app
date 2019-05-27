@@ -1,0 +1,16 @@
+{
+    "name": "AdminModule",
+    "alias": "adminmodule",
+    "description": "",
+    "keywords": [],
+    "active": 1,
+    "order": 0,
+    "providers": [
+        "Modules\\AdminModule\\Providers\\AdminModuleServiceProvider"
+    ],
+    "aliases": {},
+    "files": [
+        "start.php"
+    ],
+    "requires": []
+}

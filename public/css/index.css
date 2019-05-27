@@ -1,0 +1,160 @@
+.edit-custom{
+    min-width: 15px;
+    height: 25px;
+    padding-top: 3px;
+    padding-left: 5px;
+    margin-top: 15px;
+}
+.edit-custom > i{
+    font-size: 17px;
+}
+.padding{
+    padding-left: 150px;
+}
+.box-info{
+    padding-left: 20px;
+}
+.submit-input{
+    width: 100px;
+    margin: 20px auto;
+}
+.add_button{
+    float: right;
+    margin-top: 15px;
+}
+.add_button a,.btn-del a{
+    color: white;
+}
+.btn-del{
+    margin: 0 auto;
+    width: 60px;
+    margin-top: 15px;
+}
+.btn-del a{
+   line-height: 5px;
+
+}
+.btn.btn-flat{
+    border-radius: 3px !important;
+}
+.td_padding{
+    padding-top: 0;
+    padding-bottom: 0;
+}
+#admin-table_filter label,#admin-table_paginate{
+    float: right;
+    padding-right: 0px;
+}
+.panel-body{
+    padding-left: 20px;
+}
+.btn-cate{
+    width: 100px;
+    margin-bottom: 5px;
+}
+.box {
+    margin-bottom: 0;
+    border-top: 0;
+}
+.content-wrapper {
+    overflow: hidden;
+}
+.box-header{
+    padding-bottom: 15px;
+    padding-left: 0;
+    padding-top: 5px;
+}
+h3{
+    font-weight: 600;
+}
+.alert{
+    margin: 0;
+    padding: 5px;
+}
+.form-control, .cke_reset, #cke_content{
+    width: 93%;
+}
+.add-wrapper{
+    padding-bottom: 0;
+}
+.box-body{
+    margin-left: 30px;
+}
+.box{
+    padding-left: 10px;
+}
+.error{
+    margin-bottom: 10px;
+}
+#edit_form{
+    margin-top: 20px;
+}
+#search-form {
+    padding-bottom: 20px;
+}
+.image-edit{
+    margin-bottom: 45px;
+}
+.right-bar, .left-bar{
+    padding: 0;
+}
+
+.box-img{
+    padding-top: 50px;
+    padding-bottom: 43px;
+}
+.box-cate{
+    padding-bottom: 25px;
+}
+.cate-box{
+    margin-bottom: 20px;
+}
+.box-cate-create{
+    padding-bottom: 162px;
+    padding-top: 20px;
+}
+.form-body{
+    margin-bottom: 30px;
+    padding-left: 0;
+    margin-left: 10px;
+    overflow: hidden;
+    background-color: white;
+}
+.box{
+    border-radius: 0;
+    box-shadow: 0 0 1px 0 rgba(0,0,0,0.1)
+}
+.box-note{
+    padding-bottom: 20px;
+}
+.box-img-create{
+    padding-top: 10px;
+}
+.image-create{
+    margin-bottom: 20px;
+}
+#search-form input, .selectpicker{
+    height: 34px;
+    background-color: white;
+    border-color: #d2d6de;
+    padding: 6px 12px;
+    border-radius: 3px;
+}
+#search-form input{
+    margin: 10px;
+    width:250px;
+}
+.selectpicker {
+    margin-left: 10px;
+    margin-right: 20px;
+}
+.card label{
+    color: black;
+    font-size: 15px;
+}
+.sidebar .nav p, .off-canvas-sidebar .nav p{
+    font-size: 13px;
+}
+.sidebar .nav li>a{
+    font-size: 12px;
+}
