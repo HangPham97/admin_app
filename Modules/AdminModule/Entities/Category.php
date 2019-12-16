@@ -11,7 +11,7 @@ class category extends Model
     public $timestamps = false;
     public $incrementing = false;
     public function news(){
-        return $this->belongsTo('Modules\TestModule\Entities\News','cate_id');
+        return $this->belongsTo('Modules\AdminModule\Entities\News','cate_id');
     }
 
 }

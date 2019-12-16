@@ -13,7 +13,7 @@ class news extends Model
 //    }
     public function category()
     {
-        return $this->hasOne('Modules\TestModule\Entities\Category','cate_id');
+        return $this->hasOne('Modules\AdminModule\Entities\Category','cate_id');
     }
 
     public static  function getCateName($id){

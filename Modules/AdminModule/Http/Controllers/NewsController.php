@@ -7,7 +7,6 @@ use Illuminate\Http\Response;
 use Illuminate\Routing\Controller;
 use Modules\AdminModule\Entities\News;
 use Modules\AdminModule\Entities\Category;
-use Modules\AdminModule\Entities\NewsCate;
 
 class NewsController extends Controller
 {
@@ -48,27 +47,15 @@ class NewsController extends Controller
         $news['content'] = $request->news_content;
         $news['desc'] = $request->desc;
         $news['cover_origin'] = $request->cover_origin;
-//        if ($request->hasFile('image')) { //check if has input image
-//            $img = $request->file('image')->getClientOriginalName();
-//            $request->image->move('images', $img); //move image to serve
-//            $news['image'] = $img;
-//        }
-
         $news_search = news::where('id', $news['id'])->first();
+
         if (!empty($news_search)) {
-            return redirect('/adminmodule/create')->with("success", "ID này đã tồn tại", compact('news'))->withInput($request->input());
+            return redirect('/admin/create')->with("success", "ID này đã tồn tại", compact('news'))->withInput($request->input());
         } else{
             $new_list_cates = $request->cate;
-            if (!empty($new_list_cates)) {
-                foreach ($new_list_cates as $list_cate) {
-                    $news_cate = new NewsCate();
-                    $news_cate->id = $request->id;;
-                    $news_cate->cate_id = $list_cate;
-                    $news_cate->save();
-                }
-            }
+            $news['cate_id'] = $new_list_cates[0];
             $news->save();
-            return redirect('/adminmodule/news')->with("success", "Thêm thành công!");
+            return redirect('/admin/news')->with("success", "Thêm thành công!");
         }
     }
 

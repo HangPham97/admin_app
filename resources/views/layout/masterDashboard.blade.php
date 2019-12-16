@@ -41,7 +41,7 @@
         @yield('navbar')
         @yield('chart')
         @yield('content')
-        @include('layout.footer')
+        @include('layout.footerDashboard')
 
     </div>
 </div>

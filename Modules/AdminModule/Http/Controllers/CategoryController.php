@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Routing\Controller;
 use Modules\AdminModule\Entities\Category;
-use Modules\AdminModule\Entities\NewsCate;
 class CategoryController extends Controller
 {
     /**
@@ -24,7 +23,6 @@ class CategoryController extends Controller
 
     public function create()
     {
-
         return view('adminmodule::addCategory');
     }
 
@@ -36,10 +34,10 @@ class CategoryController extends Controller
         $cate->note = $request->note;
         $cate_search = Category::where('cate_id',$cate->cate_id)->first();
         if(!empty($cate_search)){
-            return redirect('/adminmodule/create/category')->with("success", "ID này đã tồn tại", compact('cate'))->withInput($request->input());
+            return redirect('/admin/create/category')->with("success", "ID này đã tồn tại", compact('cate'))->withInput($request->input());
         } else {
             $cate->save();
-            return redirect('/adminmodule/category')->with("success", "Thêm thành công!");
+            return redirect('/admin/category')->with("success", "Thêm thành công!");
         }
     }
 
@@ -55,14 +53,13 @@ class CategoryController extends Controller
         $cate_update['name'] = $request->name;
         $cate_update['note'] = $request->note;
         Category::where('cate_id', $cate_id)->update($cate_update);
-        return redirect('/adminmodule/category')->with("success", "Chỉnh sửa thành công!");
+        return redirect('/admin/category')->with("success", "Chỉnh sửa thành công!");
 
     }
 
     public function delete($cate_id)
     {
         Category::where('cate_id', $cate_id)->delete();
-        NewsCate::where('cate_id', $cate_id)->delete();
-        return redirect('/adminmodule/category')->with("success", "Xóa thành công");
+        return redirect('/admin/category')->with("success", "Xóa thành công");
     }
 }

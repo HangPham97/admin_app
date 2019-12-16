@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Modules\AdminModule\Entities\News;
+use Modules\AdminModule\Entities\Category;
 
 class HomeController extends Controller
 {
@@ -23,9 +25,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return redirect('/admin');
-    }
-    public function homeRedirect(){
-        return view('admin.index');
+
+        $categories = Category::all();
+        $newses = News::all()->take(3);
+        return view(
+
+            'index',compact('categories','newses'));
     }
 }

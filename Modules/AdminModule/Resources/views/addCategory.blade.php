@@ -1,5 +1,6 @@
 @extends('layout.masterDashboard')
 <!-- Content Wrapper. Contains page content -->
+
 @section('sidebar-wrapper')
     <div class="sidebar-wrapper">
         <ul class="nav">
@@ -137,7 +138,7 @@
                                                     <div class="box-boder">
                                                         <div class="box box-padding">
                                                             <div class="box-header box-id">
-                                                                <h3 class="box-title">ID:
+                                                                <h3 class="box-title">Category ID name:
                                                                 </h3>
 
                                                                 <div class="box-body pad" style="">

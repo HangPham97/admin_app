@@ -3,7 +3,7 @@
 Route::group(['middleware' => 'web', 'prefix' => 'admin', 'namespace' => 'Modules\AdminModule\Http\Controllers'], function()
 {
     Route::any('table','DatatableController@apiTable')->name('table');
-    Route::get('/','WebController@getChart')->name('admin.home');
+    Route::get('/index','WebController@getChart')->name('admin.home');
     Route::get('/news', 'NewsController@index')->name('news.home');;
     Route::get('edit/{id}','NewsController@edit')->name('edit');
     Route::post('update/{id}', 'NewsController@update')->name('news.update');

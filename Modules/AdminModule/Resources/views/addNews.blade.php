@@ -128,7 +128,7 @@
                                 <form method="post" action="{{route('news.store')}}" id="edit_form"
                                       enctype="multipart/form-data">
                                     {{csrf_field()}}
-                                    <div class="form-body col-md-12">
+                                    <div class="form-body col-lg-12">
                                         <div class="col-md-8 left-bar">
                                             <div class="box">
                                                 <div class="box-header box-id">
@@ -156,14 +156,14 @@
                                             </div>
                                             <div class="box">
                                                 <div class="box-header">
-                                                    <h3 class="box-title">Sample
+                                                    <h3 class="box-title">Description
                                                     </h3>
                                                     <!-- /. tools -->
                                                 </div>
                                                 <!-- /.box-header -->
                                                 <div class="box-body pad" style="">
 
-                                                    <input id="sample" type="text" name="sample" class="form-control"
+                                                    <input id="sample" type="text" name="desc" class="form-control"
                                                            value="{{old('sample')}}"/>
 
                                                 </div>
@@ -197,7 +197,7 @@
                                                                value="{{old('cover_origin')}}" accept="image/*"
                                                                onchange="readURL(this);">
                                                         <img id="image-url" src="../images/No_image_3x4.svg.png" alt=""
-                                                             width="95%" height="150px">
+                                                             width="200px" height="250px">
                                                     </div>
                                                 </div>
                                             </div>

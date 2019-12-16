@@ -1,0 +1,12 @@
+.carousel-inner{
+    height: auto;
+    width: 85%;
+    margin: auto;
+}
+.small-gutters > [class*="col-"]{
+    padding-left: 15px;
+
+}
+.top-post-area .top-post-left .feature-image-thumb{
+    height: 100%;
+}
