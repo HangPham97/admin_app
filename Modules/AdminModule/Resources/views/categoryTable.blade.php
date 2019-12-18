@@ -134,7 +134,7 @@
                                 <div class="panel-body row">
 
 
-                                    <table id="admin-table" class="table table-striped col-md-12" style="width: 1020px !important;">
+                                    <table id="admin-table" class="table table-striped col-md-12" style="width: 100% !important;">
                                         <thead>
                                         <tr>
                                             <th>ID</th>

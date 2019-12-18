@@ -1,12 +1,40 @@
-.carousel-inner{
-    height: auto;
-    width: 85%;
-    margin: auto;
+.row{
+    margin-right: -5px;
+    margin-left: -5px;
 }
-.small-gutters > [class*="col-"]{
-    padding-left: 15px;
+.carousel-indicators li{
+    display: none;
+}
+#nav-menu-container li:hover > a{
+    color: red;
+    text-decoration: none;
+}
+.top-post-area .top-post-left .top-post-details h3:hover{
+    color: red;
+    text-decoration: none;
 
 }
-.top-post-area .top-post-left .feature-image-thumb{
-    height: 100%;
+.category:hover .nav-menu {
+    display: block;
+}
+
+#myCarousel{
+    background: #3a3427;
+}
+
+.top-post-area .news-tracker-wrap, .latest-post-area{
+    margin-top: 30px;
+}
+.latest-post-area .latest-post-wrap .single-latest-post .feature-img img{
+    height: 190px;
+    width: 320px;
+    object-fit: cover;
+}
+.thumb{
+    height: 80px;
+    width: 100px;
+}
+.thumb img{
+    height: 90px;
+    width: 110px;
 }

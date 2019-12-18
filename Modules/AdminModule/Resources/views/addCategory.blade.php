@@ -139,6 +139,7 @@
                                                         <div class="box box-padding">
                                                             <div class="box-header box-id">
                                                                 <h3 class="box-title">Category ID name:
+
                                                                 </h3>
 
                                                                 <div class="box-body pad" style="">
@@ -208,10 +209,6 @@
                 $(".error").remove();
                 if (name.length < 2) {
                     $('#name').before('<span class="error" style="color: red">This field must be long than 2 charaters</span>');
-                    e.preventDefault();
-                }
-                if (cate.length < 2) {
-                    $('#cate-id').before('<span class="error" style="color: red">This field must be long than 2 charaters</span>');
                     e.preventDefault();
                 }
             })

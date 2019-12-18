@@ -13,10 +13,10 @@ class HomeController extends Controller
      *
      * @return void
      */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
+//    public function __construct()
+//    {
+//        $this->middleware('auth');
+//    }
 
     /**
      * Show the application dashboard.
@@ -25,11 +25,12 @@ class HomeController extends Controller
      */
     public function index()
     {
-
         $categories = Category::all();
-        $newses = News::all()->take(3);
+        $newses = News::all()->take(15);
+        $latest_news = News::orderBy('created_at', 'desc')->first();
+        $latest_newses = News::latest()->take(8)->get();
+        $travel_newses = News::with('category')->where('cate_id',3)->take(5)->get();
         return view(
-
-            'index',compact('categories','newses'));
+            'index',compact('categories','newses','latest_news','latest_newses','travel_newses'));
     }
 }

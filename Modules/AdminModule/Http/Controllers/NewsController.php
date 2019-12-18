@@ -47,16 +47,21 @@ class NewsController extends Controller
         $news['content'] = $request->news_content;
         $news['desc'] = $request->desc;
         $news['cover_origin'] = $request->cover_origin;
-        $news_search = news::where('id', $news['id'])->first();
 
-        if (!empty($news_search)) {
-            return redirect('/admin/create')->with("success", "ID này đã tồn tại", compact('news'))->withInput($request->input());
-        } else{
-            $new_list_cates = $request->cate;
-            $news['cate_id'] = $new_list_cates[0];
-            $news->save();
-            return redirect('/admin/news')->with("success", "Thêm thành công!");
-        }
+//        if ($request->hasFile('image')) { //check if has input image
+//            $img = $request->file('image')->getClientOriginalName();
+//            $request->image->move('images', $img); //move image to serve
+//            $news['image'] = $img;
+//        }
+
+//        $cate_name = Category::all();
+
+        $news['cate_id'] = $request->cate;
+        $news['author'] = $request->author;
+
+
+        return redirect('/admin/news')->with("success", "Thêm thành công!");
+
     }
 
     /**
@@ -68,7 +73,7 @@ class NewsController extends Controller
         $news = news::where('id', $id)->first();
         $cate_name = Category::all();
         $cate_name_of_news = News::getCateName($id);
-//        $news->category = $category
+
         return view('adminmodule::editNews', compact('news', 'cate_name', 'cate_name_of_news'));
     }
 
@@ -83,31 +88,15 @@ class NewsController extends Controller
         $news_update['title'] = $request->title;
         $news_update['content'] = $request->news_content;
         $news_update['desc'] = $request->desc;
-        $category = $request->cate;
-        $news_update['cate_id'] = $category;
 //        if ($request->hasFile('image')) {
 //            $img = $request->file('image')->getClientOriginalName();
 //            $request->image->move('images', $img);
 //            $news_update['image'] = $img;
 //        }
 
-//        if (!empty($list_cates)) {
-//            foreach ($list_cates as $list_cate) {
-//                $news_cate = NewsCate::where(function ($query) use ($id, $list_cate) {
-//                    $query->where('id', '=', $id);
-//                    $query->where('cate_id', '=', $list_cate);
-//                })
-//                    ->first();
-//                if (empty($news_cate)) {
-//                    $news_cate = new NewsCate();
-//                    $news_cate->id = $id;
-//                    $news_cate->cate_id = $list_cate;
-//                    $news_cate->save();
-//                }
-//            }
-//
-//        }
+        $news_update['cate_id'] = $request->cate;
 
+        $news_update['author'] = $request->author;
 
         News::where('id', $id)->update($news_update);
         return redirect('/admin/news')->with("success", "Chỉnh sửa thành công!");
@@ -116,8 +105,7 @@ class NewsController extends Controller
     public function delete($id)
     {
         News::where('id', $id)->delete();
-        NewsCate::where('id', $id)->delete();
-        return redirect('/adminmodule/news')->with("success", "Xóa thành công!","alert","Deleted");
+        return redirect('/admin/news')->with("success", "Xóa thành công!","alert","Deleted");
     }
 
     /**
