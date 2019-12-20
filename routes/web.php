@@ -12,9 +12,9 @@
 */
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/homepage', 'HomeController@index')->name('homepage');
 Route::get('/', 'HomeController@index');
 Route::get('user', 'UserController@getIndex')->name('user');
 Route::post('user/update/{id}','UserController@updateUser')->name('user.update');
 Route::get('/logout','HomeController@index')
-?>
+?> `

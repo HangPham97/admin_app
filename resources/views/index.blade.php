@@ -45,7 +45,7 @@
                                                             </a></li>
                                                         <li><a href="#"><span
                                                                         class="lnr lnr-calendar-full"></span>{{$item->post_time}}
-                                                            </a></li>
+         </a></li>
                                                         <li><a href="#"><span class="lnr lnr-bubble"></span>10 Comments</a>
                                                         </li>
                                                     </ul>
@@ -107,6 +107,7 @@
                                             <li><a href="#"><span class="lnr lnr-user"></span>{{$item->author}}</a></li>
                                             <li><a href="#"><span
                                                             class="lnr lnr-calendar-full"></span>{{$item->post_time}}
+
                                                 </a></li>
                                             <li><a href="#"><span class="lnr lnr-bubble"></span>11 Comments</a></li>
                                         </ul>

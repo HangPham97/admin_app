@@ -1,5 +1,4 @@
 <header>
-
     <div class="header-top">
         <div class="container">
             <div class="row">
@@ -40,7 +39,7 @@
                 <ul class="nav-menu">
                     <li class="menu-active"><a href="index.html">Home</a></li>
                     <li><a href="archive.html">Archive</a></li>
-                    <li><a href="category.html">Category</a>
+                    <li class="category"><a href="#">Category</a>
                         <ul>
                             @foreach($categories as $category)
                             <li><a href="standard-post.html">{{$category->name}}</a></li>

@@ -59,7 +59,6 @@ class NewsController extends Controller
         $news['cate_id'] = $request->cate;
         $news['author'] = $request->author;
 
-
         return redirect('/adminmodule/news')->with("success", "Thêm thành công!");
 
     }

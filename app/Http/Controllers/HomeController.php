@@ -36,5 +36,6 @@ class HomeController extends Controller
         $science_newses = News::orderBy('post_time', 'desc')->where('cate_id', 5)->take(4)->get();
         return view(
             'index', compact('categories', 'newses', 'latest_news', 'latest_newses', 'travel_newses', 'food_newses', 'popular_newses','science_newses'));
+
     }
 }
