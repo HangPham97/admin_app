@@ -5,7 +5,7 @@ namespace Modules\AdminModule\Entities;
 use Illuminate\Database\Eloquent\Model;
 class news extends Model
 {
-    protected $fillable = ['title','sample','content'];
+    protected $fillable = ['title','desc','content'];
     protected $table = "news";
     public $incrementing = false;
 //    public function cate(){
@@ -13,7 +13,7 @@ class news extends Model
 //    }
     public function category()
     {
-        return $this->hasOne('Modules\AdminModule\Entities\Category','cate_id');
+        return $this->belongsTo('Modules\AdminModule\Entities\Category','cate_id');
     }
 
     public static  function getCateName($id){

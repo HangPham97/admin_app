@@ -125,21 +125,11 @@
                         </div>
                         <div class="">
                             <div class="panel-body row">
-                                <form method="post" action="{{route('news.store')}}" id="edit_form"
+                                <form id="add-news" method="post" action="{{route('news.store')}}" id="edit_form"
                                       enctype="multipart/form-data">
                                     {{csrf_field()}}
                                     <div class="form-body col-lg-12">
                                         <div class="col-md-8 left-bar">
-                                            <div class="box">
-                                                <div class="box-header box-id">
-                                                    <h3 class="box-title">ID:
-                                                    </h3>
-                                                </div>
-                                                <div class="box-body pad" style="">
-                                                    <input id="news_id" type="text" name="news_id" class="form-control"
-                                                           value="{{old('news_id')}}"/>
-                                                </div>
-                                            </div>
                                             <div class="box">
                                                 <div class="box-header">
                                                     <h3 class="box-title">Title
@@ -192,32 +182,40 @@
                                                     </h3>
                                                     <!-- /.box-header -->
                                                     <div class="box-body pad">
-                                                        <input type="file" required id="image"
+                                                        <input type="text" required id="image"
                                                                class="form-control file_val image-create" name="cover_origin"
                                                                value="{{old('cover_origin')}}" accept="image/*"
                                                                onchange="readURL(this);">
-                                                        <img id="image-url" src="../images/No_image_3x4.svg.png" alt=""
+                                                        <img id="image-url" src="{{old('cover_origin')}}" alt=""
                                                              width="200px" height="250px">
                                                     </div>
                                                 </div>
                                             </div>
 
-                                            <div class="box box-cate-create">
-                                                <div class="box-header">
+                                            <div class="box">
+                                                <div class="box-header box-img-create">
+                                                    <h3 class="box-title">Author
+                                                    </h3>
+                                                    <!-- /.box-header -->
+                                                    <div class="box-body pad">
+                                                        <input type="text" required id="image"
+                                                               class="form-control file_val image-create" name="author"
+                                                               value="{{old('author')}}">
+                                                    </div>
+                                                </div>
+                                            </div>
 
+                                            <div class="box">
+                                                <div class="box-header box-cate">
                                                     <h3 class="box-title">Category
                                                     </h3>
-                                                    <div class="box-body pad cate-pad" style="">
-                                                        @foreach($cate_name as $cate)
+                                                    <select name="cate" class="form-check-label">
+                                                        @foreach(Modules\AdminModule\Entities\Category::all() as $cate)
                                                             <div class="form-check form-check-inline">
-                                                                <label class="form-check-label">
-                                                                    <input class="form-check-input" name="cate[]"
-                                                                           type="checkbox" id="{{$cate->id}}"
-                                                                           value="{{$cate->cate_id}}" {{ (is_array(old('cate')) && in_array($cate->cate_id, old('cate'))) ? ' checked' : '' }}> {{$cate->name}}
-                                                                </label>
+                                                                <option value="{{$cate->cate_id}}"> {{$cate->name}}
                                                             </div>
                                                         @endforeach
-                                                    </div>
+                                                    </select>
                                                 </div>
                                             </div>
                                         </div>

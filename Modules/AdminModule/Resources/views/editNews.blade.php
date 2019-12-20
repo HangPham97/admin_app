@@ -190,19 +190,31 @@
                                                 <div class="col-md-4 right-bar">
 
                                                     <div class="box">
-                                                        <div class="box-header box-img">
+                                                        <div class="box-header box-img-create">
                                                             <h3 class="box-title">Image
                                                             </h3>
                                                             <!-- /.box-header -->
+
                                                             <div class="box-body pad">
-                                                                <input type="file" id="image"
-                                                                       class="form-control file_val image-edit"
-                                                                       name="image"
-                                                                       value="" accept="image/*"
+                                                                <input type="text" required id="image" value="{{$news->cover_origin}}"
+                                                                       class="form-control file_val image-create" name="cover_origin"
                                                                        onchange="readURL(this);">
-                                                                <img id="image-url"
-                                                                     src="{{\Modules\AdminModule\Entities\news::getDataUrl($news->image)}}"
-                                                                     alt="" width="95%" height="180px">
+                                                                <img id="image-url" src="{{$news->cover_origin}}" alt=""
+                                                                     width="200px" height="250px">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+
+                                                    <div class="box">
+                                                        <div class="box-header box-img-create">
+                                                            <h3 class="box-title">Author
+                                                            </h3>
+                                                            <!-- /.box-header -->
+                                                            <div class="box-body pad">
+                                                                <input type="text" required id="image"
+                                                                       class="form-control file_val image-create" name="author"
+                                                                       value="{{$news->author}}">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -211,7 +223,7 @@
                                                         <div class="box-header box-cate">
                                                             <h3 class="box-title">Category
                                                             </h3>
-                                                            <select class="form-check-label">
+                                                            <select name="cate" class="form-check-label">
                                                                 @foreach($cate_name as $cate)
                                                                     <?php $checked = "" ?>
                                                                     <div class="form-check form-check-inline">

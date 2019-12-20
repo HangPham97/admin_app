@@ -308,6 +308,9 @@ body{
     color: #2c2c2c;
     line-height: normal;
 }
+#add-news{
+    width: 100%;
+}
 .form-check-inline{
   display: block;
 }
@@ -458,4 +461,8 @@ textarea.form-control{
     border-radius: 30px;
     padding-left: 10px;
     border: 1px solid #E3E3E3;
+}
+
+#image-url{
+    margin-left: 20%;
 }

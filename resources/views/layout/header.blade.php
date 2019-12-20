@@ -35,7 +35,7 @@
         </div>
     </div>
     <div class="container main-menu" id="main-menu">
-        <div class="row align-items-center justify-content-between">
+        <div class="row align-items-center">
             <nav id="nav-menu-container">
                 <ul class="nav-menu">
                     <li class="menu-active"><a href="index.html">Home</a></li>

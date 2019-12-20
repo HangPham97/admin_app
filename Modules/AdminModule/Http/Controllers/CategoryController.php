@@ -33,8 +33,14 @@ class CategoryController extends Controller
         $cate->name = $request->name;
         $cate->note = $request->note;
         $cate_search = Category::where('cate_id',$cate->cate_id)->first();
-        if(!empty($cate_search)){
+
+        $name_search = Category::where('name',$cate->name)->first();
+        if(!empty($cate_search)) {
             return redirect('/admin/create/category')->with("success", "ID này đã tồn tại", compact('cate'))->withInput($request->input());
+        }
+        if(!empty($cate_search) and !empty($name_search)){
+            return redirect('/admin/create/category')->with("success", "Dữ liệu này đã tồn tại", compact('cate'))->withInput($request->input());
+
         } else {
             $cate->save();
             return redirect('/admin/category')->with("success", "Thêm thành công!");
