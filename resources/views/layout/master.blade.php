@@ -28,11 +28,12 @@
     <link rel="stylesheet" href="css/owl.carousel.css">
     <link rel="stylesheet" href="css/jquery-ui.css">
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/app_custom.css">
     @yield('link')
 </head>
 <body>
 @include('layout.header')
-{{--content--}}
+
 @yield('content')
 
 <!-- start footer Area -->

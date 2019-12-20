@@ -16,5 +16,7 @@ Route::get('/homepage', 'HomeController@index')->name('homepage');
 Route::get('/', 'HomeController@index');
 Route::get('user', 'UserController@getIndex')->name('user');
 Route::post('user/update/{id}','UserController@updateUser')->name('user.update');
-Route::get('/logout','HomeController@index')
+Route::get('/logout','HomeController@index');
+Route::get('/about','HomeController@about')->name('about');
+Route::get('/contact','HomeController@contact')->name('contact');
 ?> `

@@ -1,4 +1,5 @@
 <header>
+
     <div class="header-top">
         <div class="container">
             <div class="row">
@@ -34,20 +35,19 @@
         </div>
     </div>
     <div class="container main-menu" id="main-menu">
-        <div class="row align-items-center">
+        <div class="row align-items-center justify-content-between">
             <nav id="nav-menu-container">
                 <ul class="nav-menu">
                     <li class="menu-active"><a href="index.html">Home</a></li>
-                    <li><a href="archive.html">Archive</a></li>
-                    <li class="category"><a href="#">Category</a>
+                    <li class="menu-has-children"><a href="">Category</a>
                         <ul>
                             @foreach($categories as $category)
-                            <li><a href="standard-post.html">{{$category->name}}</a></li>
+                                    <li><a href="image-post.html" >{{$category->name}}</a></li>
                             @endforeach
                         </ul>
                     </li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="{{route('about')}}">About</a></li>
+                    <li><a href="{{route('contact')}}">Contact</a></li>
                 </ul>
             </nav><!-- #nav-menu-container -->
             <div class="navbar-right">

@@ -26,16 +26,22 @@ class HomeController extends Controller
     public function index()
     {
         $categories = Category::all();
-        $newses = News::orderBy('post_time', 'desc')->whereNotNull('cate_id')->where('sid_text','vnexpress.net')->take(15)->get();
-        $latest_news = News::orderBy('post_time', 'desc')->whereNotNull('cate_id')->first();
+        $newses = News::orderBy('post_time', 'desc')->whereNotNull('cate_id')->where('sid_text','vnexpress.net')->take(8)->get();
         $latest_newses = News::orderBy('post_time', 'desc')->whereNotNull('cate_id')->take(8)->get();
 //        dd($latest_newses);
         $travel_newses = News::where('cate_id', 3)->take(5)->get();
-        $food_newses = News::orderBy('post_time', 'desc')->where('cate_id', 12)->take(4)->get();
+        $food_newses = News::orderBy('post_time', 'desc')->where('cate_id', 9)->take(5)->get();
         $popular_newses = News::orderBy('post_time', 'desc')->whereNotNull('cate_id')->orderBy('view', 'desc')->take(3)->get();
         $science_newses = News::orderBy('post_time', 'desc')->where('cate_id', 5)->take(4)->get();
+        $entertainment_newses = News::orderBy('post_time','desc')->whereNotNull('cate_id')->take(4)->get();
         return view(
-            'index', compact('categories', 'newses', 'latest_news', 'latest_newses', 'travel_newses', 'food_newses', 'popular_newses','science_newses'));
+            'index', compact('categories', 'newses', 'latest_newses', 'travel_newses', 'food_newses', 'popular_newses','science_newses','entertainment_newses'));
 
+    }
+    public function about(){
+        return view('about');
+    }
+    public function contact(){
+        return view('contact');
     }
 }
