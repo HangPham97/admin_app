@@ -28,6 +28,10 @@ class news extends Model
         }
         return env("APP_URL") . '/images/placeholder.jpg';
     }
+//    public function getSlugAttribute(): string
+//    {
+//        return str_slug($this->title);
+//    }
     public static function renameMonth($months){
         $data = [0,0,0,0,0,0,0,0,0,0,0,0];
         foreach ($months as $month_count){

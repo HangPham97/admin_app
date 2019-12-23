@@ -25,17 +25,15 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $categories = Category::all();
-        $newses = News::orderBy('post_time', 'desc')->whereNotNull('cate_id')->where('sid_text','vnexpress.net')->take(8)->get();
-        $latest_newses = News::orderBy('post_time', 'desc')->whereNotNull('cate_id')->take(8)->get();
-//        dd($latest_newses);
+        $newses = News::orderBy('post_time', 'desc')->whereNotNull('cate_id')->where('sid_text','vnexpress.net')->take(3)->get();
+        $latest_news = News::orderBy('post_time', 'desc')->whereNotNull('cate_id')->first();
         $travel_newses = News::where('cate_id', 3)->take(5)->get();
-        $food_newses = News::orderBy('post_time', 'desc')->where('cate_id', 9)->take(5)->get();
-        $popular_newses = News::orderBy('post_time', 'desc')->whereNotNull('cate_id')->orderBy('view', 'desc')->take(3)->get();
+        $food_newses = News::orderBy('post_time', 'desc')->where('cate_id', 9)->take(4)->get();
         $science_newses = News::orderBy('post_time', 'desc')->where('cate_id', 5)->take(4)->get();
-        $entertainment_newses = News::orderBy('post_time','desc')->whereNotNull('cate_id')->take(4)->get();
+        $entertainment_newses = News::orderBy('post_time','desc')->whereNotNull('cate_id')->where('cate_id', 6)->take(5)->get();
+
         return view(
-            'index', compact('categories', 'newses', 'latest_newses', 'travel_newses', 'food_newses', 'popular_newses','science_newses','entertainment_newses'));
+            'index', compact( 'newses', 'travel_newses', 'food_newses','science_newses','entertainment_newses','latest_news'));
 
     }
     public function about(){
@@ -43,5 +41,14 @@ class HomeController extends Controller
     }
     public function contact(){
         return view('contact');
+    }
+    public function category($id){
+        $newses = News::orderBy('post_time', 'desc')->whereNotNull('cate_id')->where('cate_id',$id)->paginate(12);
+        $category_name = Category::find($id);
+        return view('category',compact('newses','category_name'));
+    }
+    public function post($id){
+        $news = News::find($id);
+        return view('single_post', compact('news'));
     }
 }

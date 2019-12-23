@@ -9,8 +9,8 @@ Route::group(['middleware' => 'web', 'prefix' => 'admin', 'namespace' => 'Module
     Route::post('update/{id}', 'NewsController@update')->name('news.update');
     Route::get('create','NewsController@create')->name('news.create');
     Route::post('store','NewsController@store')->name('news.store');
-    Route::get('categoryTable','DatatableController@cateDatatable')->name('category');
-    Route::get('category','CategoryController@show')->name('cate.home');
+    Route::get('categoryTable','DatatableController@cateDatatable')->name('admin.category');
+    Route::get('/category','CategoryController@show')->name('cate.home');
     Route::get('create/category','CategoryController@create')->name('cate.create');
     Route::post('store/category','CategoryController@store')->name('cate.store');
     Route::get('delete/{id}','NewsController@delete')->name('delete');

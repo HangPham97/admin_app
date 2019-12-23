@@ -1,36 +1,36 @@
 <div class="col-lg-4">
     <div class="sidebars-area">
         <div class="single-sidebar-widget editors-pick-widget">
-            <h6 class="title">Du lịch</h6>
+                <h6 class="title">Tin mới nhất</h6>
             <div class="editors-pick-post">
                 <div class="feature-img-wrap relative">
                     <div class="feature-img relative">
                         <div class="overlay overlay-bg"></div>
-                        <img class="img-fluid" src="{{$travel_newses[0]->cover_origin}}" alt="">
+                        <img class="img-fluid" src="{{$data['latest_newses'][0]->cover_origin}}" alt="">
                     </div>
                     <ul class="tags">
-                        <li><a href="#">{{$travel_newses[0]->category->name}}</a></li>
+                        <li><a href="#">{{$data['latest_newses'][0]->category->name}}</a></li>
                     </ul>
                 </div>
                 <div class="details">
                     <a href="image-post.html">
-                        <h4 class="mt-20">{{$travel_newses[0]->title}}</h4>
+                        <h4 class="mt-20">{{$data['latest_newses'][0]->title}}</h4>
                     </a>
                     <ul class="meta">
                         <li><a href="#"><span
-                                        class="lnr lnr-user"></span>{{$travel_newses[0]->author}}
+                                        class="lnr lnr-user"></span>{{$data['latest_newses'][0]->author}}
                             </a></li>
                         <li><a href="#"><span
-                                        class="lnr lnr-calendar-full"></span>{{$travel_newses[0]->post_time}}
+                                        class="lnr lnr-calendar-full"></span>{{$data['latest_newses'][0]->post_time}}
                             </a></li>
                         <li><a href="#"><span class="lnr lnr-bubble"></span>06 comments</a></li>
                     </ul>
                     <p class="excert">
-                        {{$travel_newses[0]->desc}}
+                        {{$data['latest_newses'][0]->desc}}
                     </p>
                 </div>
                 <div class="post-lists">
-                    @foreach($travel_newses as $news)
+                    @foreach($data['latest_newses'] as $news)
                         @if($loop->index != 0)
                             <div class="single-post d-flex flex-row">
                                 <div class="thumb">
@@ -77,8 +77,8 @@
             </p>
         </div>
         <div class="single-sidebar-widget most-popular-widget">
-            <h6 class="title">Giải trí</h6>
-            @foreach($entertainment_newses  as $news)
+            <h6 class="title">Tin phổ biến</h6>
+            @foreach($data['popular_newses'] as $news)
                 <div class="single-list flex-row d-flex">
                     <div class="thumb">
                         <img src="{{$news->cover_origin}}" alt="">

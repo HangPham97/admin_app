@@ -25,7 +25,7 @@
             <div class="row justify-content-between align-items-center">
                 <div class="col-lg-4 col-md-4 col-sm-12 logo-left no-padding">
                     <a href="index.html">
-                        <img class="img-fluid" src="img/logo.png" alt="">
+                        <img class="img-fluid" src="{{ asset('img/logo.png') }}"alt="">
                     </a>
                 </div>
                 <div class="col-lg-8 col-md-8 col-sm-12 logo-right no-padding ads-banner">
@@ -38,16 +38,16 @@
         <div class="row align-items-center justify-content-between">
             <nav id="nav-menu-container">
                 <ul class="nav-menu">
-                    <li class="menu-active"><a href="index.html">Home</a></li>
-                    <li class="menu-has-children"><a href="">Category</a>
+                    <li class="menu-active"><a href="{{route('home')}}">Trang chủ</a></li>
+                    <li class="menu-has-children"><a href="#">Chuyên mục</a>
                         <ul>
-                            @foreach($categories as $category)
-                                    <li><a href="image-post.html" >{{$category->name}}</a></li>
+                            @foreach($data['category'] as $category)
+                                    <li><a href="{{route('category',$category->id)}}" >{{$category->name}}</a></li>
                             @endforeach
                         </ul>
                     </li>
-                    <li><a href="{{route('about')}}">About</a></li>
-                    <li><a href="{{route('contact')}}">Contact</a></li>
+                    <li><a href="{{route('about')}}">Chi tiết</a></li>
+                    <li><a href="{{route('contact')}}">Liên hệ</a></li>
                 </ul>
             </nav><!-- #nav-menu-container -->
             <div class="navbar-right">

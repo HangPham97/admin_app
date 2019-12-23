@@ -174,7 +174,7 @@
             serverSide: true,
 
             ajax: {
-                url: "{{ route('category') }}",
+                url: "{{ route('admin.category') }}",
                 // data: function (d) {
                 //     d.title = $('input[name=title]').val();
                 //     d.category = $('input[name=category]').val();

@@ -14,7 +14,7 @@
                             <ul class="tags">
                                 <li><a href="#">{{$newses[0]->category->name}}</a></li>
                             </ul>
-                            <a href="image-post.html">
+                            <a href="{{route('post',$newses[0]->id)}}">
                                 <h3>{{$newses[0]->title}}</h3>
                             </a>
                             <ul class="meta">
@@ -37,7 +37,7 @@
                                         <ul class="tags">
                                             <li><a href="#">{{$news->category->name}}</a></li>
                                         </ul>
-                                        <a href="image-post.html">
+                                        <a href="{{route('post',$news->id)}}">
                                             <h4>{{$news->title}}</h4>
                                         </a>
                                         <ul class="meta">
@@ -55,7 +55,8 @@
                     </div>
                     <div class="col-lg-12">
                         <div class="news-tracker-wrap">
-                            <h6><span>Breaking News:</span> <a href="#">{{$latest_newses[0]->title}}</a>
+
+                            <h6><span>Breaking News:</span> <a href="#">{{$latest_news->title}}</a>
                             </h6>
                         </div>
                     </div>
@@ -70,8 +71,8 @@
                     <div class="col-lg-8 post-list">
                         <!-- Start latest-post Area -->
                         <div class="latest-post-wrap">
-                            <h4 class="cat-title">Latest News</h4>
-                            @foreach($latest_newses as $news)
+                            <h4 class="cat-title">Du lịch</h4>
+                            @foreach($travel_newses as $news)
                                 @if($loop->index > 0)
                                     <div class="single-latest-post row align-items-center">
                                         <div class="col-lg-5 post-left">
@@ -84,7 +85,7 @@
                                             </ul>
                                         </div>
                                         <div class="col-lg-7 post-right">
-                                            <a href="image-post.html">
+                                            <a href="{{route('post',$news->id)}}">
                                                 <h4>{{$news->title}}</h4>
                                             </a>
                                             <ul class="meta">
@@ -114,24 +115,24 @@
                         <!-- End banner-ads Area -->
                         <!-- Start popular-post Area -->
                         <div class="popular-post-wrap">
-                            <h4 class="title">Tin phổ biến</h4>
+                            <h4 class="title">Sức khỏe</h4>
                             <div class="feature-post relative">
                                 <div class="feature-img relative">
                                     <div class="overlay overlay-bg"></div>
-                                    <img class="img-fluid" src="{{$popular_newses[0]->cover_origin}}" alt="">
+                                    <img class="img-fluid" src="{{$entertainment_newses[0]->cover_origin}}" alt="">
                                 </div>
                                 <div class="details">
                                     <ul class="tags">
-                                        <li><a href="#">{{$popular_newses[0]->category->name}}</a></li>
+                                        <li><a href="#">{{$entertainment_newses[0]->category->name}}</a></li>
                                     </ul>
-                                    <a href="image-post.html">
-                                        <h3>{{$popular_newses[0]->title}}</h3>
+                                    <a href="{{route('post',$news->id)}}">
+                                        <h3>{{$entertainment_newses[0]->title}}</h3>
                                     </a>
                                     <ul class="meta">
-                                        <li><a href="#"><span class="lnr lnr-user"></span>{{$popular_newses[0]->author}}
+                                        <li><a href="#"><span class="lnr lnr-user"></span>{{$entertainment_newses[0]->author}}
                                             </a></li>
                                         <li><a href="#"><span
-                                                        class="lnr lnr-calendar-full"></span>{{$popular_newses[0]->post_time}}
+                                                        class="lnr lnr-calendar-full"></span>{{$entertainment_newses[0]->post_time}}
                                             </a>
                                         </li>
                                         <li><a href="#"><span class="lnr lnr-bubble"></span>06 commentss</a></li>
@@ -139,7 +140,7 @@
                                 </div>
                             </div>
                             <div class="row mt-20 medium-gutters">
-                                @foreach($popular_newses as $news)
+                                @foreach($entertainment_newses as $news)
                                     @if($loop->index != 0)
                                         <div class="col-lg-6 single-popular-post">
                                             <div class="feature-img-wrap relative">
@@ -152,7 +153,7 @@
                                                 </ul>
                                             </div>
                                             <div class="details">
-                                                <a href="image-post.html">
+                                                <a href="{{route('post',$news->id)}}">
                                                     <h4>{{$news->title}}</h4>
                                                 </a>
                                                 <ul class="meta">
@@ -190,7 +191,7 @@
                                             </ul>
                                         </div>
                                         <div class="col-lg-7 post-right">
-                                            <a href="image-post.html">
+                                            <a href="{{route('post',$news->id)}}">
                                                 <h4>{{$news->title}}</h4>
                                             </a>
                                             <ul class="meta">
